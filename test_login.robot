@@ -84,10 +84,10 @@ Type in incorrect password
 Click on the Sign in button
     Click Element       ${SIGNINBUTTON}
 Click on the Sign out button
-    Wait Until Element Is Visible   ${MAINPAGEBUTTON}
+    Wait Until Element Is Visible   ${MAINPAGEBUTTON}       20s
     Click Element    ${SIGNOUTBUTTON}
 Assert dashboard
-    Wait Until Element Is Visible       ${MAINPAGEBUTTON}       10s
+    Wait Until Element Is Visible       ${MAINPAGEBUTTON}       20s
     Title Should Be     Scouts panel
     Capture Page Screenshot    alert.png
 Assert password error
@@ -95,7 +95,7 @@ Assert password error
     Element Text Should Be      ${INVALID DATA CAPTION}     Identifier or password invalid.
     Capture Page Screenshot     screenshots/login/password-error.png
 Assert login page
-    Wait Until Element Is Visible    ${LOGIN FORM}      10s
+    Wait Until Element Is Visible    ${LOGIN FORM}      20s
     Title Should Be     Scouts panel - sign in
     Capture Page Screenshot    screenshots/login/login-page.png
 Click on the Change language button
@@ -105,7 +105,7 @@ Assert language change
     Wait Until Element Is Visible    ${SIGNINBUTTON}
     Title Should Be     Scouts panel - zaloguj
 Click on the Add player button
-    Wait Until Element Is Visible       ${MAINPAGEBUTTON}
+    Wait Until Element Is Visible       ${MAINPAGEBUTTON}       20s
     Click Element    ${ADD PLAYER BUTTON}
 Type in name
     Wait Until Element Is Visible       ${FORM TITLE}
@@ -119,7 +119,7 @@ Type in main position
 Click on the Submit button
     Click Element    ${SUBMITBUTTON}
 Assert edit player page
-    Wait Until Element Is Visible    ${PROGRESSBARTOASTER}
+    Wait Until Element Is Visible    ${PROGRESSBARTOASTER}      20s
     Element Should Contain      ${FORM TITLE}   Edit player
     Capture Page Screenshot    screenshots/add-player/player-added.png
 
